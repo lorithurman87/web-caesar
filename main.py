@@ -33,8 +33,8 @@ form = """
             
             </label>
 
-        <textarea name="text" {0}.format> </textarea>
-        <input type="submit" value="Submit Query"/>            
+        <textarea name="text">{0}</textarea>
+        <input type="submit" value="Submit Query"/>           
       
     </body>
 </html>
@@ -47,9 +47,8 @@ def encrypt():
     rots = int(request.form['rot'])
     texts = request.form.get("text")
     var3 = rotate_string(texts, rots)
-    return form.format("<h1>" + (var3) + "</h1>")
+    return form.format(var3)
     
-
 
 @app.route("/")
 def index():
